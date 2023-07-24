@@ -1,8 +1,8 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <div class="book">
-    <h2>{{ book.title }}</h2>
-    <h3>{{ book.author }}</h3>
+    <h2>{{ book.Title }}</h2>
+    <h3>{{ book.Author }}</h3>
     <button @click="readBook">Read</button>
   </div>
 </template>
@@ -18,7 +18,7 @@
     methods: {
       readBook() {
         // Navigate to the book reader when the button is clicked
-        this.$router.push(`/books/${this.book.id}`);
+        this.$router.push(`/books/${this.book.ID}`);
       }
     }
   }
