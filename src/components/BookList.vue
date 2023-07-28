@@ -20,6 +20,7 @@
     async created() {
       // Fetch the list of books when the component is created
       const response = await axios.get('/api/books')
+      console.log(response.data)
       this.books = response.data
     }
   }

@@ -15,7 +15,7 @@ const routes = [
     component: UploadForm
   },
   {
-    path: '/books/:id',
+    path: '/book/:id',
     name: 'book-reader',
     component: BookReader,
     props: true

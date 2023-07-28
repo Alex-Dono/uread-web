@@ -1,6 +1,6 @@
 <template>
   <div class="book-reader">
-    <pdfvuer :src="bookUrl" />
+    <pdfvuer v-if="bookUrl" :src="bookUrl" />
   </div>
 </template>
 
@@ -25,8 +25,11 @@ export default {
   },
   async created() {
     // Fetch the book URL when the component is created
-    const response = await axios.get(`/api/books/${this.id}`)
-    this.bookUrl = response.data.url
+    const response = await axios.get(`/api/book?id=${this.id}`, { responseType: 'blob' })
+    console.log(response.data.url)
+    const blob = new Blob([response.data], { type: 'application/pdf' })
+    this.bookUrl = URL.createObjectURL(blob)
+    console.log(this.id)
   }
 }
 </script>

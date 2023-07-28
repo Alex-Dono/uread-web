@@ -18,7 +18,7 @@
     methods: {
       readBook() {
         // Navigate to the book reader when the button is clicked
-        this.$router.push(`/books/${this.book.ID}`);
+        this.$router.push(`/book/${this.book.ID}`);
       }
     }
   }
